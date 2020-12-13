@@ -39,6 +39,7 @@ iabbrev <buffer> type Type
 iabbrev <buffer> byval ByVal
 iabbrev <buffer> byref ByRef
 iabbrev <buffer> worksheet Worksheet
+iabbrev <buffer> sheets Sheets
 iabbrev <buffer> option Option
 iabbrev <buffer> explicit Explicit
 iabbrev <buffer> function Function
@@ -66,4 +67,12 @@ iabbrev <buffer> new New
 iabbrev <buffer> me Me
 iabbrev <buffer> workbook Workbook
 iabbrev <buffer> value Value
+iabbrev <buffer> goto GoTo
+iabbrev <buffer> on On
+iabbrev <buffer> errorhandler ErrorHandler
+iabbrev <buffer> select Select
+iabbrev <buffer> nothing Nothing
+iabbrev <buffer> msgbox MsgBox
+iabbrev <buffer> delete Delete
+iabbrev <buffer> doevents DoEvents
 
