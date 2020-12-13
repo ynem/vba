@@ -61,4 +61,9 @@ iabbrev <buffer> cvar CVar
 iabbrev <buffer> cbool CBool
 iabbrev <buffer> optional Optional
 iabbrev <buffer> do Do
+iabbrev <buffer> formula Formula
+iabbrev <buffer> new New
+iabbrev <buffer> me Me
+iabbrev <buffer> workbook Workbook
+iabbrev <buffer> value Value
 

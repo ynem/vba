@@ -11,6 +11,7 @@ syntax keyword vbaKeyword  If Then Else ElseIf End For Each Next In With While L
                          \ ByVal ByRef
                          \ Worksheet
                          \ Option Explicit Function Sub Exit
+                         \ Formula New Workbook Value
 syntax keyword vbaFunction Cells Range Print CUInt CStr CBool CByte CCur CDate CDbl CInt CLng CSng CVar
 syntax match   vbaComment "\v'.*$"
 syntax match   vbaOperator "\v\*"
