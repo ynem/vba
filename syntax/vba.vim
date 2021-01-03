@@ -21,7 +21,7 @@ syntax match   vbaOperator "\v/"
 syntax match   vbaOperator "\v\+"
 syntax match   vbaOperator "\v-"
 syntax match   vbaOperator "\v\="
-syntax region  vbaString start=/\v"/ end=/\v"/
+syntax region  vbaString start=/\v"/ skip=/\v\\"/ end=/\v"/
 highlight link vbaKeyword  Keyword
 highlight link vbaFunction Function
 highlight link vbaComment  Comment
