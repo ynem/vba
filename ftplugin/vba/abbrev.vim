@@ -75,4 +75,6 @@ iabbrev <buffer> nothing Nothing
 iabbrev <buffer> msgbox MsgBox
 iabbrev <buffer> delete Delete
 iabbrev <buffer> doevents DoEvents
+iabbrev <buffer> pvv Private
+iabbrev <buffer> pbb Public
 
