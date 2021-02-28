@@ -11,7 +11,7 @@ syntax keyword vbaBoolean     True False
 syntax keyword vbaConditional If Then Else ElseIf Select Case
 syntax keyword vbaRepeat      For Each Next Loop While Do
 syntax keyword vbaKeyword     End In With
-                            \ And Or Not True False
+                            \ And Or Not
                             \ Set Dim Call As Private Public Const Enum
                             \ ByVal ByRef
                             \ Debug
@@ -30,6 +30,7 @@ syntax match vbaOperator      "\v\="
 syntax region  vbaString      start=/\v"/ skip=/\v\\"/ end=/\v"/
 highlight link vbaConditional Conditional
 highlight link vbaType        Type
+highlight link vbaBoolean     Boolean
 highlight link vbaRepeat      Repeat
 highlight link vbaKeyword     Keyword
 highlight link vbaFunction    Function
