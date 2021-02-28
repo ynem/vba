@@ -30,7 +30,6 @@ syntax match vbaOperator      "\v\="
 syntax region  vbaString      start=/\v"/ skip=/\v\\"/ end=/\v"/
 highlight link vbaConditional Conditional
 highlight link vbaType        Type
-highlight link vbaTypeUser    Type
 highlight link vbaRepeat      Repeat
 highlight link vbaKeyword     Keyword
 highlight link vbaFunction    Function
