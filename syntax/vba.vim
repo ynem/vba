@@ -4,7 +4,7 @@ endif
 
 let b:current_syntax = "vba"
 
-syntax keyword vbaType        Long String Boolean Long Integer Variant Collection Byte Single Dboule Currency Date Object
+syntax keyword vbaType        Long String Boolean Integer Variant Collection Byte Single Dboule Currency Date Object
                             \ Workbook Worksheet
                             \ Type LongPtr
 syntax keyword vbaBoolean     True False
