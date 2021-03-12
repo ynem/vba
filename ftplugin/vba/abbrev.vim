@@ -72,6 +72,7 @@ iabbrev <buffer> on On
 iabbrev <buffer> errorhandler ErrorHandler
 iabbrev <buffer> select Select
 iabbrev <buffer> nothing Nothing
+iabbrev <buffer> is Is
 iabbrev <buffer> msgbox MsgBox
 iabbrev <buffer> delete Delete
 iabbrev <buffer> doevents DoEvents
