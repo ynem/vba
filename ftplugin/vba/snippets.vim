@@ -1,4 +1,4 @@
-inoremap <buffer> iff If  Then<CR>End If<CR><Esc>0Dkk<S-$>bhi
+inoremap <buffer> iff If  Then<CR>End If<Esc>0k<S-$>bhi
 inoremap <buffer> eff ElseIf  Then<Esc>bhi
 inoremap <buffer> pvv Private 
 inoremap <buffer> pbb Public 
