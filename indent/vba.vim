@@ -5,10 +5,12 @@
 "		Small update 2010 Jul 28 by Maxim Kim
 
 if exists("b:did_indent")
-    finish
+	finish
 endif
 let b:did_indent = 1
 
+setlocal tabstop=4
+setlocal shiftwidth=4
 setlocal autoindent
 setlocal indentexpr=VbGetIndent(v:lnum)
 setlocal indentkeys&
@@ -18,61 +20,62 @@ let b:undo_indent = "set ai< indentexpr< indentkeys<"
 
 " Only define the function once.
 if exists("*VbGetIndent")
-    finish
+	finish
 endif
 
 fun! VbGetIndent(lnum)
-    " labels and preprocessor get zero indent immediately
-    let this_line = getline(a:lnum)
-    let LABELS_OR_PREPROC = '^\s*\(\<\k\+\>:\s*$\|#.*\)'
-    if this_line =~? LABELS_OR_PREPROC
+	" labels and preprocessor get zero indent immediately
+	let this_line = getline(a:lnum)
+	let LABELS_OR_PREPROC = '^\s*\(\<\k\+\>:\s*$\|#.*\)'
+	if this_line =~? LABELS_OR_PREPROC
 	return 0
-    endif
+	endif
 
-    " Find a non-blank line above the current line.
-    " Skip over labels and preprocessor directives.
-    let lnum = a:lnum
-    while lnum > 0
+	" Find a non-blank line above the current line.
+	" Skip over labels and preprocessor directives.
+	let lnum = a:lnum
+	while lnum > 0
 	let lnum = prevnonblank(lnum - 1)
 	let previous_line = getline(lnum)
 	if previous_line !~? LABELS_OR_PREPROC
-	    break
+		break
 	endif
-    endwhile
+	endwhile
 
-    " Hit the start of the file, use zero indent.
-    if lnum == 0
+	" Hit the start of the file, use zero indent.
+	if lnum == 0
 	return 0
-    endif
+	endif
 
-    let ind = indent(lnum)
+	let ind = indent(lnum)
 
-    " Add
-    if previous_line =~? '^\s*\<\(begin\|\%(\%(private\|public\|friend\)\s\+\)\=\%(function\|sub\|property\)\|select\|case\|default\|if\|else\|elseif\|do\|for\|while\|enum\|with\)\>'
+	" Add
+	if previous_line =~? '^\s*\<\(begin\|\%(\%(private\|public\|friend\)\s\+\)\=\%(function\|sub\|property\)\|select\|case\|default\|if\|else\|elseif\|do\|for\|while\|enum\|with\)\>'
 	let ind = ind + shiftwidth()
-    endif
+	endif
 
-    " Subtract
-    if this_line =~? '^\s*\<end\>\s\+\<select\>'
+	" Subtract
+	if this_line =~? '^\s*\<end\>\s\+\<select\>'
 	if previous_line !~? '^\s*\<select\>'
-	    let ind = ind - 2 * shiftwidth()
+		let ind = ind - 2 * shiftwidth()
 	else
-	    " this case is for an empty 'select' -- 'end select'
-	    " (w/o any case statements) like:
-	    "
-	    " select case readwrite
-	    " end select
-	    let ind = ind - shiftwidth()
+		" this case is for an empty 'select' -- 'end select'
+		" (w/o any case statements) like:
+		"
+		" select case readwrite
+		" end select
+		let ind = ind - shiftwidth()
 	endif
-    elseif this_line =~? '^\s*\<\(end\|else\|elseif\|until\|loop\|next\|wend\)\>'
+	elseif this_line =~? '^\s*\<\(end\|else\|elseif\|until\|loop\|next\|wend\)\>'
 	let ind = ind - shiftwidth()
-    elseif this_line =~? '^\s*\<\(case\|default\)\>'
+	elseif this_line =~? '^\s*\<\(case\|default\)\>'
 	if previous_line !~? '^\s*\<select\>'
-	    let ind = ind - shiftwidth()
+		let ind = ind - shiftwidth()
 	endif
-    endif
+	endif
 
-    return ind
+	return ind
 endfun
 
 " vim:sw=4
+
